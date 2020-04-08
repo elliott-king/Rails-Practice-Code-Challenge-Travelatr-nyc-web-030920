@@ -1,3 +1,8 @@
 <h1><%= @post.title %></h1>
 <p><%= @post.content %></p>
 <p>Likes: <%= @post.likes %></p>
+<%= button_to "Like Post", {controller: :posts, action: "like", id: @post.id}, method: :post %>
+
+<p>Author: <%= link_to @post.blogger.name, blogger_path(@post.blogger) %></p>
+<p>Destination: <%= link_to @post.destination.full_name, destination_path(@post.destination) %></p>
+<%= button_to "Edit Post", {controller: :posts, action: "edit", id: @post.id}, method: :get %>

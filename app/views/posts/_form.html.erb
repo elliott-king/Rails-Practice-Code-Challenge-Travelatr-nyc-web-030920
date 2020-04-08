@@ -1,0 +1,21 @@
+<% if flash[:errors] %>
+  <p>
+    <%= flash[:errors]%>
+  </p>
+<% end %>
+
+<%= form_for post do |fb| %>
+  <%= fb.label :title%>
+  <%= fb.text_field :title%>
+  <br>
+  <%= fb.label :content %>
+  <%= fb.text_area :content %>
+  <br>
+  <%= fb.label :blogger_id %>
+  <%= fb.collection_select :blogger_id, Blogger.all, :id, :name %>
+  <br>
+  <%= fb.label :destination_id %>
+  <%= fb.collection_select :destination_id, Destination.all, :id, :full_name %>
+  <br>
+  <%= fb.submit %>
+<% end %>
