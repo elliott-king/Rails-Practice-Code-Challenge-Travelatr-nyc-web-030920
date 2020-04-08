@@ -12,7 +12,8 @@ Post.destroy_all
 
 30.times do 
   Destination.create!({
-    name: Faker::GameOfThrones.city,
+    # name: Faker::GameOfThrones.city,
+    name: Faker::TvShows::GameOfThrones.city,
     country: Faker::Address.country
   })
 end

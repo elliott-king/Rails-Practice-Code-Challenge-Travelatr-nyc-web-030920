@@ -1,3 +1,17 @@
 <h1><%= @blogger.name%></h1>
 <p><%= @blogger.age %></p>
 <p><%= @blogger.bio %></p>
+
+<p>Total Likes: <%= @blogger.total_likes %></p>
+<% featured_post = @blogger.featured_post %>
+<p>Featured Post: <%= link_to featured_post.title, post_path(featured_post) %></p>
+
+<h3>Most Written About Destinations</h3>
+<% most_written = @blogger.most_written_about %>
+<ul>
+<% most_written.each do |dest| %>
+    <li>
+    <%= link_to dest.full_name, destination_path(dest) %>
+    </li>
+<% end %>
+</ul>
