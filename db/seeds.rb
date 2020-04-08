@@ -28,7 +28,7 @@ end
   (2..6).to_a.sample.times do 
     Post.create!({
       title: Faker::Hipster.sentence(3),
-      content: Faker::Hipster.paragraphs(4),
+      content: Faker::Hipster.paragraphs(4).join(" "),
       likes: 0,
       blogger: blogger,
       destination: Destination.all.sample

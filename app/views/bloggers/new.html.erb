@@ -1,5 +1,9 @@
 <h1>Create Blogger</h1>
 
+<% if flash[:errors] %>
+  <p><%= flash[:errors].to_s %></p>
+<% end %>
+
 <%= form_for(@blogger) do |form| %>
   <p><%= form.label :name %> <%= form.text_field :name %> </p>
   <p><%= form.label :age %> <%= form.number_field :age %> </p>

@@ -18,10 +18,8 @@ class BloggersController < ApplicationController
     if @blogger.valid?
       redirect_to blogger_path(@blogger)
     else
-      byebug
       flash[:errors] = @blogger.errors.full_messages
       render :new 
-      # redirect_to new_blogger_path(blogger)
     end
   end
 
